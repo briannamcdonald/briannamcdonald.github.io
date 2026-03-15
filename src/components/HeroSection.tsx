@@ -6,7 +6,7 @@ const HeroSection = () => {
     <section className="relative isolate min-h-[100svh] flex items-center justify-center overflow-hidden">
       {/* Soft gradient blobs */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute -top-28 -left-28 h-[320px] w-[320px] rounded-full bg-sage-light/55 blur-3xl sm:-top-40 sm:left-auto sm:-right-40 sm:h-[600px] sm:w-[600px] sm:bg-sage-light/60" />
+        <div className="absolute -top-28 -right-28 h-[320px] w-[320px] rounded-full bg-sage-light/55 blur-3xl sm:-top-40 sm:-right-40 sm:h-[600px] sm:w-[600px] sm:bg-sage-light/60" />
         <div className="absolute -bottom-28 -left-28 h-[280px] w-[280px] rounded-full bg-blush/30 blur-3xl sm:-bottom-40 sm:-left-40 sm:h-[500px] sm:w-[500px] sm:bg-blush/35" />
         <div className="absolute hidden h-[400px] w-[400px] rounded-full bg-accent/40 blur-3xl sm:block sm:top-1/2 sm:left-1/2 sm:-translate-x-1/2 sm:-translate-y-1/2" />
       </div>
