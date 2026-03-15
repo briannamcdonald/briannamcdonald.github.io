@@ -1,4 +1,4 @@
-import { ReactNode } from "react";
+import { KeyboardEvent, MouseEvent, ReactNode } from "react";
 import { motion } from "framer-motion";
 import { ArrowUpRight } from "lucide-react";
 
@@ -64,6 +64,28 @@ const experiences: Experience[] = [
 ];
 
 const ExperienceSection = () => {
+  const openCompanySite = (url: string) => {
+    window.open(url, "_blank", "noopener,noreferrer");
+  };
+
+  const handleCardClick = (event: MouseEvent<HTMLDivElement>, url: string) => {
+    const target = event.target as HTMLElement;
+    if (target.closest("a")) {
+      return;
+    }
+
+    openCompanySite(url);
+  };
+
+  const handleCardKeyDown = (event: KeyboardEvent<HTMLDivElement>, url: string) => {
+    if (event.key !== "Enter" && event.key !== " ") {
+      return;
+    }
+
+    event.preventDefault();
+    openCompanySite(url);
+  };
+
   return (
     <section id="experience" className="pt-12 pb-24 px-6 bg-card">
       <div className="container mx-auto max-w-4xl">
@@ -107,21 +129,23 @@ const ExperienceSection = () => {
               </div>
 
               <div
-                className={`group relative block overflow-hidden rounded-2xl px-6 py-5 transition-all duration-300 hover:shadow-sm ${
+                className={`group relative block cursor-pointer overflow-hidden rounded-2xl px-6 py-5 transition-all duration-300 hover:shadow-sm ${
                   exp.current
                     ? "bg-gradient-to-br from-primary/10 via-accent to-secondary/30"
                     : "border bg-background hover:border-primary/30"
                 }`}
+                role="link"
+                tabIndex={0}
+                aria-label={`Open ${exp.company} website`}
+                onClick={(event) => handleCardClick(event, exp.url)}
+                onKeyDown={(event) => handleCardKeyDown(event, exp.url)}
               >
-                <a
-                  href={exp.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label={`Open ${exp.company}`}
-                  className="absolute top-5 right-5 opacity-0 transition-opacity group-hover:opacity-100"
+                <span
+                  aria-hidden="true"
+                  className="absolute top-5 right-5 opacity-0 transition-opacity group-hover:opacity-100 group-focus-visible:opacity-100"
                 >
                   <ArrowUpRight className="h-4 w-4 text-primary" />
-                </a>
+                </span>
 
                 <span
                   className={`mb-3 inline-block rounded-full px-3 py-1 font-body text-[10px] tracking-widest uppercase md:hidden ${
