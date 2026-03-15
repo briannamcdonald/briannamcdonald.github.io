@@ -1,13 +1,234 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300;1,9..40,400&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  :root {
+    --background: 40 33% 98%;
+    --foreground: 220 20% 18%;
+
+    --card: 40 30% 96%;
+    --card-foreground: 220 20% 18%;
+
+    --popover: 40 33% 98%;
+    --popover-foreground: 220 20% 18%;
+
+    --primary: 155 25% 42%;
+    --primary-foreground: 40 33% 98%;
+
+    --secondary: 340 30% 92%;
+    --secondary-foreground: 340 20% 40%;
+
+    --muted: 40 20% 93%;
+    --muted-foreground: 220 10% 50%;
+
+    --accent: 155 20% 90%;
+    --accent-foreground: 155 30% 30%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 40 15% 88%;
+    --input: 40 15% 88%;
+    --ring: 155 25% 42%;
+
+    --radius: 0.75rem;
+
+    /* Custom tokens */
+    --sage: 155 25% 42%;
+    --sage-light: 155 20% 90%;
+    --blush: 340 30% 92%;
+    --blush-dark: 340 20% 65%;
+    --cream: 40 33% 98%;
+    --warm-gray: 220 10% 50%;
+
+    --font-display: 'DM Serif Display', serif;
+    --font-body: 'DM Sans', sans-serif;
+
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-body antialiased;
+  }
+
+  h1, h2, h3, h4 {
+    font-family: var(--font-display);
+  }
+}
+
+@layer utilities {
+  .font-display {
+    font-family: var(--font-display);
+  }
+  .font-body {
+    font-family: var(--font-body);
+  }
+}
+
+.hero-botanical-decoration {
+  position: absolute;
+  z-index: 0;
+  pointer-events: none;
+  user-select: none;
+  object-fit: contain;
+  opacity: 0.16;
+  transition: transform 260ms ease-out;
+}
+
+.hero-botanical-bouquet {
+  top: 2.75rem;
+  left: -1.5rem;
+  width: min(28vw, 24rem);
+}
+
+.hero-botanical-tulips {
+  right: 2.5rem;
+  bottom: -0.5rem;
+  width: min(19vw, 17rem);
+  transform: scaleX(-1);
+}
+
+.hero-botanical-fern {
+  right: 1rem;
+  bottom: -0.5rem;
+  width: min(12vw, 9rem);
+  transform: scaleX(-1) rotate(-15deg);
+}
+
+@media (hover: hover) {
+  .hero-botanical-decoration {
+    pointer-events: auto;
+  }
+
+  .hero-botanical-bouquet:hover {
+    transform: rotate(2deg);
+  }
+
+  .hero-botanical-tulips:hover {
+    transform: scaleX(-1) rotate(-2deg);
+  }
+
+  .hero-botanical-fern:hover {
+    transform: scaleX(-1) rotate(-12deg);
+  }
+}
+
+.nav-flower-accent {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  width: 2rem;
+  height: 2rem;
+  transform: translateY(-50%);
+  pointer-events: none;
+}
+
+@keyframes experience-dot-pulse {
+  0%, 100% {
+    box-shadow: 0 0 0 6px hsl(var(--accent) / 0.48);
+  }
+
+  50% {
+    box-shadow: 0 0 0 9px hsl(var(--accent) / 0.24);
+  }
+}
+
+.experience-current-dot {
+  animation: experience-dot-pulse 3.6s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-botanical-decoration {
+    transition: none;
+  }
+
+  .experience-current-dot {
+    animation: none;
+    box-shadow: 0 0 0 6px hsl(var(--accent) / 0.48);
+  }
+}
+
+@media (max-width: 1024px) {
+  .hero-botanical-bouquet {
+    left: -3rem;
+    width: min(38vw, 22rem);
+  }
+
+  .hero-botanical-tulips {
+    right: 2.75rem;
+    width: min(28vw, 15rem);
+  }
+
+  .hero-botanical-fern {
+    width: min(18vw, 8rem);
+  }
+}
+
+@media (max-width: 640px) {
+  .hero-botanical-bouquet {
+    top: 5.5rem;
+    left: -4rem;
+    width: 13rem;
+    opacity: 0.16;
+  }
+
+  .hero-botanical-tulips {
+    right: 1.5rem;
+    bottom: 0;
+    width: 9.25rem;
+    opacity: 0.18;
+  }
+
+  .hero-botanical-fern {
+    right: 0.5rem;
+    bottom: -0.5rem;
+    width: 5.5rem;
+    opacity: 0.18;
+  }
+}
+
+@media (max-width: 420px) {
+  .hero-botanical-bouquet {
+    left: -2.75rem;
+    width: 10.5rem;
+  }
+
+  .hero-botanical-tulips {
+    right: 2rem;
+    bottom: 0;
+    width: 8.25rem;
+  }
+
+}
+
+@media (max-width: 375px) {
+  .hero-botanical-bouquet {
+    left: -1.25rem;
+    width: 9.75rem;
+  }
+
+  .hero-botanical-tulips {
+    right: 3rem;
+    width: 8.5rem;
+  }
 }

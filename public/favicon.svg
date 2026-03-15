@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" role="img" aria-labelledby="title desc">
+  <title id="title">Brianna McDonald portfolio icon</title>
+  <desc id="desc">A cream rounded square with a dark serif B and botanical accents in sage and blush.</desc>
+  <rect x="16" y="16" width="224" height="224" rx="56" fill="#FCF9F4" />
+  <rect x="20" y="20" width="216" height="216" rx="52" fill="none" stroke="#6A8A79" stroke-width="8" />
+  <circle cx="182" cy="78" r="22" fill="#EAD8DF" />
+  <path d="M170 104c18 4 31 18 35 35-18-4-31-18-35-35Z" fill="#6A8A79" opacity="0.9" />
+  <text
+    x="126"
+    y="171"
+    fill="#2B3440"
+    font-family="Georgia, 'Times New Roman', serif"
+    font-size="132"
+    font-weight="700"
+    text-anchor="middle"
+  >
+    B
+  </text>
+</svg>
