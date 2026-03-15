@@ -238,6 +238,28 @@
   pointer-events: none;
 }
 
+.site-nav {
+  padding-top: env(safe-area-inset-top);
+}
+
+.site-nav::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  opacity: 0;
+  background: hsl(var(--background) / 0.9);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  transition: opacity 300ms ease;
+}
+
+.site-nav.is-scrolled::before,
+.site-nav.is-open::before {
+  opacity: 1;
+}
+
 @media (max-width: 1024px) {
   .hero-botanical-bouquet {
     left: -3rem;
