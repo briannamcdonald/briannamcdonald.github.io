@@ -115,6 +115,77 @@
   transform: scaleX(-1) rotate(-15deg);
 }
 
+@media (min-width: 1800px) {
+  .hero-section {
+    min-height: max(100svh, 64rem);
+  }
+
+  .hero-content {
+    max-width: 56rem;
+  }
+
+  .hero-gradient-orb-top {
+    top: -5rem;
+    right: max(-4rem, calc(50% - 52rem));
+    width: clamp(36rem, 32vw, 48rem);
+    height: clamp(36rem, 32vw, 48rem);
+  }
+
+  .hero-gradient-orb-bottom {
+    bottom: -4rem;
+    left: max(-5rem, calc(50% - 50rem));
+    width: clamp(30rem, 28vw, 42rem);
+    height: clamp(30rem, 28vw, 42rem);
+  }
+
+  .hero-gradient-orb-center {
+    width: clamp(26rem, 24vw, 34rem);
+    height: clamp(26rem, 24vw, 34rem);
+    opacity: 0.7;
+  }
+
+  .hero-botanical-bouquet {
+    left: max(-1.5rem, calc(50% - 42rem));
+    width: min(24vw, 26rem);
+  }
+
+  .hero-botanical-tulips {
+    right: max(2.5rem, calc(50% - 38rem));
+    width: min(16vw, 18rem);
+  }
+
+  .hero-botanical-fern {
+    right: max(1rem, calc(50% - 42rem));
+    width: min(10vw, 10rem);
+  }
+
+  .hero-scroll-indicator {
+    bottom: 2.5rem;
+  }
+}
+
+@media (min-width: 1800px) and (min-height: 1000px) {
+  .hero-botanical-bouquet {
+    top: clamp(6rem, 11vh, 8.5rem);
+  }
+
+  .hero-botanical-tulips {
+    bottom: clamp(3rem, 8vh, 5.5rem);
+  }
+
+  .hero-botanical-fern {
+    bottom: clamp(2.5rem, 7vh, 4.5rem);
+  }
+
+  .hero-gradient-orb-top {
+    top: -2rem;
+  }
+
+  .hero-gradient-orb-bottom {
+    bottom: -1rem;
+  }
+}
+
 @media (hover: hover) {
   .hero-botanical-decoration {
     pointer-events: auto;
