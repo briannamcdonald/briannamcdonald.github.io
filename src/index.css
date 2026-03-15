@@ -133,6 +133,12 @@
   }
 }
 
+@media (prefers-reduced-motion: reduce) {
+  .hero-botanical-decoration {
+    transition: none;
+  }
+}
+
 .nav-flower-accent {
   position: absolute;
   left: 0;
@@ -141,31 +147,6 @@
   height: 2rem;
   transform: translateY(-50%);
   pointer-events: none;
-}
-
-@keyframes experience-dot-pulse {
-  0%, 100% {
-    box-shadow: 0 0 0 6px hsl(var(--accent) / 0.48);
-  }
-
-  50% {
-    box-shadow: 0 0 0 9px hsl(var(--accent) / 0.24);
-  }
-}
-
-.experience-current-dot {
-  animation: experience-dot-pulse 3.6s ease-in-out infinite;
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .hero-botanical-decoration {
-    transition: none;
-  }
-
-  .experience-current-dot {
-    animation: none;
-    box-shadow: 0 0 0 6px hsl(var(--accent) / 0.48);
-  }
 }
 
 @media (max-width: 1024px) {

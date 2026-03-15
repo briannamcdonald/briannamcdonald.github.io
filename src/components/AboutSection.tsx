@@ -1,4 +1,3 @@
-import { motion } from "framer-motion";
 import { MapPin, Briefcase, GraduationCap, Trophy, BookOpen, Lightbulb, Star, Medal } from "lucide-react";
 
 const skills = [
@@ -19,25 +18,13 @@ const AboutSection = () => {
   return (
     <section id="about" className="pt-24 pb-12 px-6 bg-card">
       <div className="container mx-auto max-w-5xl">
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          className="text-center mb-14"
-        >
+        <div className="text-center mb-14">
           <p className="font-body text-sm tracking-[0.3em] uppercase text-primary mb-3">A Bit About Me</p>
           <h2 className="font-display text-4xl text-foreground">About</h2>
-        </motion.div>
+        </div>
 
         <div className="grid gap-8 md:grid-cols-[200px_1fr] md:gap-10 items-start">
-          <motion.div
-            initial={{ opacity: 0, x: -20 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: 0.1 }}
-            className="mx-auto grid w-full max-w-md grid-cols-[minmax(0,8.5rem)_1fr] items-center gap-4 rounded-[1.75rem] border border-border/70 bg-background/80 p-4 shadow-sm max-[375px]:mx-[-2rem] max-[375px]:w-[calc(100%+4rem)] max-[375px]:max-w-none sm:max-w-lg sm:grid-cols-[minmax(0,9.5rem)_1fr] sm:gap-5 sm:p-5 md:mx-0 md:block md:max-w-none md:space-y-4 md:rounded-none md:border-0 md:bg-transparent md:p-0 md:shadow-none"
-          >
+          <div className="mx-auto grid w-full max-w-md grid-cols-[minmax(0,8.5rem)_1fr] items-center gap-4 rounded-[1.75rem] border border-border/70 bg-background/80 p-4 shadow-sm max-[375px]:mx-[-2rem] max-[375px]:w-[calc(100%+4rem)] max-[375px]:max-w-none sm:max-w-lg sm:grid-cols-[minmax(0,9.5rem)_1fr] sm:gap-5 sm:p-5 md:mx-0 md:block md:max-w-none md:space-y-4 md:rounded-none md:border-0 md:bg-transparent md:p-0 md:shadow-none">
             <div className="aspect-[4/5] overflow-hidden rounded-2xl bg-sage-light md:aspect-square">
               <img
                 src="/images/picture.jpg"
@@ -57,15 +44,9 @@ const AboutSection = () => {
                 </div>
               ))}
             </div>
-          </motion.div>
+          </div>
 
-          <motion.div
-            initial={{ opacity: 0, x: 20 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: 0.2 }}
-            className="space-y-6"
-          >
+          <div className="space-y-6">
             <div className="space-y-4">
               <p className="font-body text-muted-foreground leading-relaxed">
                 I'm a Full Stack Developer at{" "}
@@ -124,7 +105,7 @@ const AboutSection = () => {
                 })}
               </div>
             </div>
-          </motion.div>
+          </div>
         </div>
       </div>
     </section>

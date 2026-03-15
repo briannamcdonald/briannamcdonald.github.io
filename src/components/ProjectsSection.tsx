@@ -1,5 +1,4 @@
 import { Fragment, ReactNode, useState } from "react";
-import { motion } from "framer-motion";
 import { AppWindow, BookOpenText, ExternalLink, Github, Newspaper, Youtube } from "lucide-react";
 
 interface ProjectLink {
@@ -219,26 +218,16 @@ const ProjectsSection = () => {
   return (
     <section id="projects" className="py-24 px-6">
       <div className="container mx-auto max-w-5xl">
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          className="text-center mb-16"
-        >
+        <div className="text-center mb-16">
           <p className="font-body text-sm tracking-[0.3em] uppercase text-primary mb-3">Featured Work</p>
           <h2 className="font-display text-4xl text-foreground">Projects</h2>
-        </motion.div>
+        </div>
 
         <div className="space-y-20 mb-24">
           {featuredProjects.map((project, i) => (
-            <motion.div
+            <div
               key={project.title}
               id={project.id}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: 0.1 }}
               className="group relative grid scroll-mt-28 items-center gap-10 md:grid-cols-2"
             >
               {project.links[0] && (
@@ -293,19 +282,13 @@ const ProjectsSection = () => {
                   ))}
                 </div>
               </div>
-            </motion.div>
+            </div>
           ))}
         </div>
 
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          className="text-center mb-10"
-        >
+        <div className="text-center mb-10">
           <h3 className="font-display text-2xl text-foreground">Other Projects</h3>
-        </motion.div>
+        </div>
 
         <div className="grid items-stretch gap-4 sm:gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {otherProjects.map((project, index) => (
@@ -321,11 +304,7 @@ const ProjectsSection = () => {
                   </button>
                 </div>
               )}
-              <motion.article
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: index % 3 === 0 ? 0 : (index % 3) * 0.05 }}
+              <article
                 className={`group relative flex h-full flex-col overflow-hidden rounded-2xl border border-border bg-card shadow-sm transition-shadow hover:shadow-md ${
                   index >= mobileVisibleProjectCount && !showAllMobileProjects ? "hidden sm:flex" : ""
                 } ${project.className ?? ""}`}
@@ -377,7 +356,7 @@ const ProjectsSection = () => {
                     ))}
                   </div>
                 </div>
-              </motion.article>
+              </article>
             </Fragment>
           ))}
         </div>

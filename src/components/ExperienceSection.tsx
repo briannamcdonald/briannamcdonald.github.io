@@ -1,5 +1,4 @@
 import { KeyboardEvent, MouseEvent, ReactNode } from "react";
-import { motion } from "framer-motion";
 import { ArrowUpRight } from "lucide-react";
 
 interface Experience {
@@ -89,16 +88,10 @@ const ExperienceSection = () => {
   return (
     <section id="experience" className="pt-12 pb-24 px-6 bg-card">
       <div className="container mx-auto max-w-4xl">
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          className="text-center mb-14"
-        >
+        <div className="text-center mb-14">
           <p className="font-body text-sm tracking-[0.3em] uppercase text-primary mb-3">Where I've Worked</p>
           <h2 className="font-display text-4xl text-foreground">Experience</h2>
-        </motion.div>
+        </div>
 
         <div className="space-y-5">
           {experiences.map((exp, index) => (
@@ -122,7 +115,7 @@ const ExperienceSection = () => {
                 <div
                   className={`relative z-10 h-3 w-3 rounded-full border ${
                     exp.current
-                      ? "experience-current-dot border-primary/40 bg-primary"
+                      ? "border-primary/40 bg-primary shadow-[0_0_0_6px_hsl(var(--accent)/0.48)]"
                       : "border-primary/30 bg-background"
                   }`}
                 />

@@ -1,5 +1,4 @@
 import { useState, useEffect } from "react";
-import { motion } from "framer-motion";
 
 const navItems = [
   { label: "Projects", href: "#projects" },
@@ -40,10 +39,7 @@ const Navbar = () => {
   }, []);
 
   return (
-    <motion.nav
-      initial={{ y: -80 }}
-      animate={{ y: 0 }}
-      transition={{ duration: 0.6, ease: "easeOut" }}
+    <nav
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         scrolled ? "bg-background/90 backdrop-blur-md shadow-sm" : "bg-transparent"
       }`}
@@ -100,11 +96,7 @@ const Navbar = () => {
 
       {/* Mobile menu */}
       {mobileOpen && (
-        <motion.div
-          initial={{ opacity: 0, y: -10 }}
-          animate={{ opacity: 1, y: 0 }}
-          className="md:hidden bg-background/95 backdrop-blur-md border-t border-border px-6 pb-6"
-        >
+        <div className="md:hidden bg-background/95 backdrop-blur-md border-t border-border px-6 pb-6">
           {navItems.map((item) => (
             <a
               key={item.label}
@@ -115,9 +107,9 @@ const Navbar = () => {
               {item.label}
             </a>
           ))}
-        </motion.div>
+        </div>
       )}
-    </motion.nav>
+    </nav>
   );
 };
 
