@@ -61,9 +61,9 @@ const otherProjects: Project[] = [
     image: "/images/projects/hackFrostGif.gif",
     links: [
       {
-        label: "Live Demo",
-        url: "https://nl-life.vercel.app/",
-        icon: "demo",
+        label: "GitHub",
+        url: "https://github.com/briannamcdonald/virtual-tourism-nl",
+        icon: "github",
       },
     ],
   },
