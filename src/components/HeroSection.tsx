@@ -67,13 +67,13 @@ const HeroSection = () => {
         >
           <a
             href="#projects"
-            className="font-body bg-primary text-primary-foreground px-8 py-3 rounded-full hover:opacity-90 transition-opacity text-sm tracking-wide"
+            className="font-body border border-primary bg-primary text-primary-foreground px-8 py-3 rounded-full hover:opacity-90 transition-opacity text-sm tracking-wide"
           >
             View My Work
           </a>
           <a
             href="#about"
-            className="font-body border border-border text-foreground px-8 py-3 rounded-full hover:bg-muted transition-colors text-sm tracking-wide"
+            className="font-body border border-border bg-background/65 text-foreground px-8 py-3 rounded-full hover:bg-muted/65 transition-colors text-sm tracking-wide"
           >
             About Me
           </a>
