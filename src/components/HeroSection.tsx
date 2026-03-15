@@ -63,7 +63,7 @@ const HeroSection = () => {
         href="#about"
         className="absolute bottom-10 left-1/2 -translate-x-1/2 text-muted-foreground hover:text-primary transition-colors"
       >
-        <ArrowDown className="w-5 h-5 sm:motion-safe:animate-bounce" />
+        <ArrowDown className="w-5 h-5 motion-safe:animate-bounce" />
       </a>
     </section>
   );

@@ -133,6 +133,24 @@
   }
 }
 
+@media (hover: none) and (pointer: coarse) {
+  .hero-botanical-decoration {
+    pointer-events: auto;
+  }
+
+  .hero-botanical-bouquet:active {
+    transform: rotate(2deg);
+  }
+
+  .hero-botanical-tulips:active {
+    transform: scaleX(-1) rotate(-2deg);
+  }
+
+  .hero-botanical-fern:active {
+    transform: scaleX(-1) rotate(-12deg);
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   .hero-botanical-decoration {
     transition: none;
