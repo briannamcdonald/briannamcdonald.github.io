@@ -3,8 +3,8 @@ import HeroSection from "@/components/HeroSection";
 import AboutSection from "@/components/AboutSection";
 import ProjectsSection from "@/components/ProjectsSection";
 import ExperienceSection from "@/components/ExperienceSection";
-
 import ContactSection from "@/components/ContactSection";
+import BackToTopButton from "@/components/BackToTopButton";
 import Footer from "@/components/Footer";
 
 const Index = () => {
@@ -17,6 +17,7 @@ const Index = () => {
       <ExperienceSection />
       <ContactSection />
       <Footer />
+      <BackToTopButton />
     </div>
   );
 };
