@@ -100,7 +100,7 @@ const Navbar = () => {
       {mobileOpen && (
         <div
           id="mobile-nav-menu"
-          className="relative z-10 md:hidden border-t border-border px-6 pb-6"
+          className="relative z-10 md:hidden border-t border-border px-6 pb-1"
         >
           <a
             href="/documents/BriannaMcDonaldResume.pdf"
