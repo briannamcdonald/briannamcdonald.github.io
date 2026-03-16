@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { Menu, X } from "lucide-react";
 
 const navItems = [
   { label: "Projects", href: "#projects" },
@@ -85,14 +86,16 @@ const Navbar = () => {
         {/* Mobile toggle */}
         <button
           onClick={() => setMobileOpen(!mobileOpen)}
-          className="md:hidden flex flex-col gap-1.5"
-          aria-label="Toggle menu"
+          className="md:hidden"
+          aria-label={mobileOpen ? "Close menu" : "Open menu"}
           aria-expanded={mobileOpen}
           aria-controls="mobile-nav-menu"
         >
-          <span className={`block w-6 h-0.5 bg-foreground transition-transform ${mobileOpen ? "rotate-45 translate-y-2" : ""}`} />
-          <span className={`block w-6 h-0.5 bg-foreground transition-opacity ${mobileOpen ? "opacity-0" : ""}`} />
-          <span className={`block w-6 h-0.5 bg-foreground transition-transform ${mobileOpen ? "-rotate-45 -translate-y-2" : ""}`} />
+          {mobileOpen ? (
+            <X className="h-6 w-6 text-foreground" aria-hidden="true" />
+          ) : (
+            <Menu className="h-6 w-6 text-foreground" aria-hidden="true" />
+          )}
         </button>
       </div>
 
