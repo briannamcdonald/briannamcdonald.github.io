@@ -87,6 +87,8 @@ const Navbar = () => {
           onClick={() => setMobileOpen(!mobileOpen)}
           className="md:hidden flex flex-col gap-1.5"
           aria-label="Toggle menu"
+          aria-expanded={mobileOpen}
+          aria-controls="mobile-nav-menu"
         >
           <span className={`block w-6 h-0.5 bg-foreground transition-transform ${mobileOpen ? "rotate-45 translate-y-2" : ""}`} />
           <span className={`block w-6 h-0.5 bg-foreground transition-opacity ${mobileOpen ? "opacity-0" : ""}`} />
@@ -96,7 +98,19 @@ const Navbar = () => {
 
       {/* Mobile menu */}
       {mobileOpen && (
-        <div className="relative z-10 md:hidden border-t border-border px-6 pb-6">
+        <div
+          id="mobile-nav-menu"
+          className="relative z-10 md:hidden border-t border-border px-6 pb-6"
+        >
+          <a
+            href="/documents/BriannaMcDonaldResume.pdf"
+            target="_blank"
+            rel="noreferrer"
+            onClick={() => setMobileOpen(false)}
+            className="block py-3 font-body font-medium text-foreground hover:text-primary transition-colors"
+          >
+            Resume
+          </a>
           {navItems.map((item) => (
             <a
               key={item.label}
